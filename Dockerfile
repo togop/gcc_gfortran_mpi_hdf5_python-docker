@@ -15,5 +15,10 @@ RUN curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 RUN chmod +x Miniconda3-latest-Linux-x86_64.sh
 RUN ./Miniconda3-latest-Linux-x86_64.sh -b
 
-# run a CMD to show conda is installed
-#CMD conda list
+# check all is there
+CMD dcc --version
+CMD gfortran --version
+CMD cmake --version
+CMD mpirun --version
+CMD h5cc -showconfig
+CMD conda list
