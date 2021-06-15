@@ -22,3 +22,9 @@ CMD cmake --version
 CMD mpirun --version
 CMD h5cc -showconfig
 CMD conda list
+
+CMD echo "PATH=$PATH:/root/miniconda3/bin/" >> ~/.bashrc
+CMD source ~/.bashrc
+CMD conda init bash
+CMD conda --version
+CMD conda env list
