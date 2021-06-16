@@ -13,7 +13,7 @@ RUN apt-get install --yes libhdf5-103 libhdf5-cpp-103 libhdf5-dev libhdf5-mpich-
 RUN apt-get install --yes curl
 RUN curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o Miniconda3-latest-Linux-x86_64.sh
 RUN chmod +x Miniconda3-latest-Linux-x86_64.sh
-RUN ./Miniconda3-latest-Linux-x86_64.sh -b
+RUN ./Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda3
 
 # check all is there
 CMD dcc --version
@@ -23,8 +23,9 @@ CMD mpirun --version
 CMD h5cc -showconfig
 CMD conda list
 
-CMD echo "PATH=$PATH:/root/miniconda3/bin/" >> ~/.bashrc
-CMD source ~/.bashrc
-CMD conda init bash
-CMD conda --version
-CMD conda env list
+# need to be in the 
+#CMD echo "PATH=$PATH:/opt/miniconda3/bin/" >> ~/.bashrc
+#CMD source ~/.bashrc
+#CMD conda init bash
+#CMD conda --version
+#CMD conda env list
