@@ -2,9 +2,11 @@ name: Docker Image with openMPI
 
 on:
   push:
-    branches: [ openmpi ]
+    branches: [ master ]
+    paths:
+      - Dockerfile_openmpi
   pull_request:
-    branches: [ openmpi ]
+    branches: [ maste ]
 
 jobs:
 
