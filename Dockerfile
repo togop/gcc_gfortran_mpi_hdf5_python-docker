@@ -1,5 +1,5 @@
 FROM debian:stable-slim
-MAINTAINER Todor Gitchev <todor.gitchev@izb.unibe.ch>
+MAINTAINER Todor Gitchev <todor.gitchev@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
