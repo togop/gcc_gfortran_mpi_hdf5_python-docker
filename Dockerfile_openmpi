@@ -25,7 +25,7 @@ CMD h5cc -showconfig
 CMD conda list
 CMD python --version
 CMD pip --version
-CMD locate mpirun
+# CMD locate mpirun
 
 # need to be in the 
 #CMD echo "PATH=$PATH:/opt/miniconda3/bin/" >> ~/.bashrc
