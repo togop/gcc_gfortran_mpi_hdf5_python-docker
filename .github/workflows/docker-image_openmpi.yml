@@ -23,7 +23,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD    
     - name: Build the Docker image
-      run: docker build --file Dockerfile_openmpi -t ${{secrets.DOCKER_USER}}/gcc_gfortran_openmpi_hdf5_python:$(date +'%Y-%m-%d') .
+      run: docker build --file Dockerfile_openmpi -t togop/gcc_gfortran_openmpi_hdf5_python:$(date +'%Y-%m-%d') .
       # -t ${{secrets.DOCKER_USER}}/gcc_gfortran_openmpi_hdf5_python:latest
       # $(date +%s)
     - name: Docker Push
