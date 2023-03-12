@@ -1,0 +1,35 @@
+FROM debian:stable-slim
+MAINTAINER Todor Gitchev <todor.gitchev@gmail.com>
+
+ENV DEBIAN_FRONTEND noninteractive
+
+# install all 
+RUN apt-get update --yes
+RUN apt-get install --yes gcc
+RUN apt-get install --yes gfortran
+RUN apt-get install --yes cmake
+RUN apt-get install --yes openmpi-bin openmpi-doc libopenmpi-dev
+RUN apt-get install --yes libhdf5-103 libhdf5-cpp-103 libhdf5-dev libhdf5-openmpi-dev
+RUN apt-get install --yes curl
+RUN apt-get install --yes python3-pip
+RUN curl https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -o Miniforge3-Linux-x86_64.sh
+RUN chmod +x Miniforge3-Linux-x86_64.sh
+RUN bash ./Miniforge3-Linux-x86_64.shh -b -p /opt/miniforge3
+
+# check all is there
+CMD dcc --version
+CMD gfortran --version
+CMD cmake --version
+CMD mpirun --version
+CMD h5cc -showconfig
+CMD mamba list
+CMD python --version
+CMD pip --version
+CMD mamba --version
+# CMD locate mpirun
+
+# need to be in the
+#CMD echo "PATH=$PATH:/opt/miniconda3/bin/" >> ~/.bashrc
+#CMD source ~/.bashrc
+#CMD conda init bash
+#CMD conda env list
