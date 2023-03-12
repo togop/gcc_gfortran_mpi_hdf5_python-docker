@@ -31,5 +31,5 @@ CMD pip --version
 #CMD echo "PATH=$PATH:/opt/miniconda3/bin/" >> ~/.bashrc
 #CMD source ~/.bashrc
 #CMD conda init bash
-#CMD conda --version
+CMD conda --version
 #CMD conda env list
