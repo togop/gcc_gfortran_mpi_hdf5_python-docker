@@ -6,7 +6,7 @@ on:
     paths:
       - Dockerfile_openmpi_mamba
   pull_request:
-    branches: [ maste ]
+    branches: [ master ]
 
 jobs:
 
