@@ -1,0 +1,30 @@
+name: Docker Image with openMPI and Mamba
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - Dockerfile_openmpi_mamba
+  pull_request:
+    branches: [ maste ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD    
+    - name: Build the Docker image
+      run: docker build --file Dockerfile_openmpi_mamba -t togop/gcc_gfortran_openmpi_hdf5_python_mamba:$(date +'%Y-%m-%d') .
+      # -t ${{secrets.DOCKER_USER}}/gcc_gfortran_openmpi_hdf5_python_mamba:latest
+      # $(date +%s)
+    - name: Docker Push
+      run: docker push togop/gcc_gfortran_openmpi_hdf5_python_mamba:$(date +'%Y-%m-%d')
