@@ -29,7 +29,7 @@ CMD mamba --version
 # CMD locate mpirun
 
 # need to be in the
-#CMD echo "PATH=$PATH:/opt/miniconda3/bin/" >> ~/.bashrc
+#CMD echo "PATH=$PATH:/opt/mambaforge/bin/" >> ~/.bashrc
 #CMD source ~/.bashrc
 #CMD conda init bash
 #CMD conda env list
