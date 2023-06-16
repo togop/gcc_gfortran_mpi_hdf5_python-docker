@@ -31,5 +31,5 @@ CMD mamba --version
 # need to be in the
 #CMD echo "PATH=$PATH:/opt/mambaforge/bin/" >> ~/.bashrc
 #CMD source ~/.bashrc
-#CMD conda init bash
-#CMD conda env list
+#CMD mamba init bash
+#CMD mamba env list
