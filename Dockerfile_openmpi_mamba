@@ -17,7 +17,7 @@ RUN chmod +x Mambaforge-Linux-x86_64.sh
 RUN bash ./Mambaforge-Linux-x86_64.sh -b -p /opt/mambaforge
 
 # check all is there
-CMD dcc --version
+CMD gcc --version
 CMD gfortran --version
 CMD cmake --version
 CMD mpirun --version
