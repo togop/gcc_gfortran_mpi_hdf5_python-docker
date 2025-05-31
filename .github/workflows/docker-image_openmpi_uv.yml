@@ -1,0 +1,28 @@
+name: Docker Image with openMPI and UV
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - Dockerfile_openmpi_uv
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD    
+    - name: Build the Docker image
+      run: docker build --file Dockerfile_openmpi_uv -t togop/gcc_gfortran_openmpi_hdf5_python_uv:$(date +'%Y-%m-%d') .
+    - name: Docker Push
+      run: docker push togop/gcc_gfortran_openmpi_hdf5_python_uv:$(date +'%Y-%m-%d')
