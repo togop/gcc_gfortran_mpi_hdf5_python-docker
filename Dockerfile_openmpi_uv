@@ -25,7 +25,7 @@ CMD gfortran --version
 CMD cmake --version
 CMD mpirun --version
 CMD h5cc -showconfig
-CMD mamba list
+#CMD mamba list
 CMD python --version
 CMD pip --version
 #CMD uv --version
